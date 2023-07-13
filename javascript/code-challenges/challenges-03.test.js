@@ -27,8 +27,11 @@ Write a function named typeNum that, given an array as input, uses filter to ret
 For example, typeNum([1, 'bob' ,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
-const typeNum = (arr) => {
-  // Solution code here...
+  let typeNum = (arr) => {
+    let types = arr.map((item) => typeof item);
+    return types;
+  };
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -40,7 +43,11 @@ For example, containsAnd(['panda', 'ran', 'and']) returns ['panda', 'and'].
 ------------------------------------------------------------------------------------------------ */
 
 const containsAnd = (arr) => {
-  // Solution code here...
+  const containsA = arr.includes("A");
+  const containsB = arr.includes("B");
+
+  return containsA && containsB;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -52,7 +59,7 @@ For example, oddValues([1,2,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
 const oddValues = (arr) => {
-  // Solution code here...
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -64,7 +71,14 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
 
 const notInFirstArray = (forbiddenValues, arr) => {
-  // Solution code here...
+
+  const notInFirstArray = (forbiddenValues, arr) => {
+    // Filter the values in `forbiddenValues` that are not present in `arr`
+    const result = forbiddenValues.filter(value => !arr.includes(value));
+
+    return result;
+  };
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -107,7 +121,8 @@ const snorlaxData = {
 };
 
 const getBaseStatGreaterThan = (arr, minBaseStat) => {
-  // Solution code here...
+  let filteredStats = getBaseStatGreaterThan(snorlaxData.stats, 50);
+console.log(filteredStats);
 };
 
 /* ------------------------------------------------------------------------------------------------
