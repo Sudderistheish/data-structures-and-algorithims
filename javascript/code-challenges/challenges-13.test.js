@@ -9,6 +9,18 @@ Write a function named longestString that takes in an array of strings and retur
 const longestString = (arr) => {
 if (!arr || arr.length === 0) {
     return -1;
+
+    }
+
+    let longestIndex = 0; // Assume the longest string is at index 0
+
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i].length > arr[longestIndex].length) {
+            longestIndex = i; // Update the longestIndex if a longer string is found
+        }
+    }
+
+    return longestIndex;
 };
   
 /* ------------------------------------------------------------------------------------------------
@@ -24,6 +36,7 @@ const firstLetters = (arr) => {
   return result;
 };
 
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
@@ -34,7 +47,11 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 
 const findHappiness = (arr) => {
   return arr.filter(str => str.includes(":)"));
+
+
 };
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
